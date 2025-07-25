@@ -6,6 +6,13 @@ Based on build description by given by [rengareddy](https://rangareddy.github.io
 
 ### nix shell
 ```
+git clone git@github.com:OleJoik/parquet-tools.git
+cd parquet-tools
+nix develop
+```
+
+or
+```
 nix shell github:OleJoik/parquet-tools
 ```
 
