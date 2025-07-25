@@ -14,7 +14,7 @@ or in flake.nix with `nix develop`
 ```nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     parquet-tools.url = "github:<your-user>/parquet-tools-flake";
   };
 
