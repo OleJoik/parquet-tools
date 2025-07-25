@@ -9,9 +9,10 @@ Based on build description by given by [rengareddy](https://rangareddy.github.io
 nix shell github:OleJoik/parquet-tools
 ```
 
-or in flake.nix with `nix develop`
+or in flake.nix using `nix develop`
 
 ```nix
+# flake.nix
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
