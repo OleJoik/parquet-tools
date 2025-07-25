@@ -4,15 +4,17 @@ A nix flake to make a nix derivation of parquet-tools.
 
 Based on build description by given by [rengareddy](https://rangareddy.github.io/ParquetTools/).
 
-### nix shell
-```
+### Creating a nix shell
+
+```bash
 git clone git@github.com:OleJoik/parquet-tools.git
 cd parquet-tools
 nix develop
 ```
 
 or
-```
+
+```bash
 nix shell github:OleJoik/parquet-tools
 ```
 
@@ -38,8 +40,8 @@ or in flake.nix using `nix develop`
 
 ### Help output
 
-```
-parquet-tools -h                      
+```bash
+parquet-tools -h
 parquet-tools cat:
 Prints the content of a Parquet file. The output contains only the data, no
 metadata is displayed
@@ -151,13 +153,16 @@ where option is one of:
 where <input> is the parquet file to print the column and offset indexes for
 ```
 
-
-# WSL Usage
+## WSL Usage
 
 Install nix package manager
-```sh <(curl -L https://nixos.org/nix/install) --daemon```
+
+```bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
 
 ~/.config/nix/nix.conf
-```
+
+```bash
 experimental-features = nix-command flakes
 ```
