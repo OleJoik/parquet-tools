@@ -9,7 +9,7 @@
 
       parquetToolsJar = pkgs.fetchurl {
         url = "https://repo1.maven.org/maven2/org/apache/parquet/parquet-tools/1.11.2/parquet-tools-1.11.2.jar";
-        sha256 = "sha256-wMrG/ALYayOqsYX2HGK/onPh/8MqkdA8o7GUSfqq1ZM="; # Verified
+        sha256 = "sha256-wMrG/ALYayOqsYX2HGK/onPh/8MqkdA8o7GUSfqq1ZM=";
       };
 
     in pkgs.stdenv.mkDerivation {
