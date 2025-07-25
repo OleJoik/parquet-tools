@@ -3,9 +3,9 @@
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
 
-  outputs = { self, nixpkgs }: {
-    packages.x86_64-linux.default = let
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+  outputs = { self, nixpkgs }: let system = "x86_64-linux"; in {
+    packages.${system}.default = let
+      pkgs = nixpkgs.legacyPackages.${system};
 
       parquetToolsJar = pkgs.fetchurl {
         url = "https://repo1.maven.org/maven2/org/apache/parquet/parquet-tools/1.11.2/parquet-tools-1.11.2.jar";
@@ -27,12 +27,11 @@
       '';
     };
 
-    apps.x86_64-linux.default = {
+    apps.${system}.default = {
       type = "app";
-      program = "${self.packages.x86_64-linux.default}/bin/parquet-tools";
+      program = "${self.packages.${system}.default}/bin/parquet-tools";
     };
-
-    devShells.default = nixpkgs.legacyPackages.${system}.mkShell {
+    devShells.${system}.default = nixpkgs.legacyPackages.${system}.mkShell {
       buildInputs = [ self.packages.${system}.default ];
     };
   };
