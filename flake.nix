@@ -31,6 +31,7 @@
       type = "app";
       program = "${self.packages.x86_64-linux.default}/bin/parquet-tools";
     };
+
     devShells.default = nixpkgs.legacyPackages.${system}.mkShell {
       buildInputs = [ self.packages.${system}.default ];
     };
