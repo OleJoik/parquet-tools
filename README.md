@@ -2,11 +2,33 @@
 
 A nix flake to make a nix derivation of parquet-tools.
 
-Based on description by [rengareddy](https://rangareddy.github.io/ParquetTools/)
+Based on build description by given by [rengareddy](https://rangareddy.github.io/ParquetTools/).
 
+### nix shell
 ```
 nix shell github:OleJoik/parquet-tools
 ```
+
+or in flake.nix with `nix develop`
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    parquet-tools.url = "github:<your-user>/parquet-tools-flake";
+  };
+
+  outputs = { self, nixpkgs, parquet-tools, ... }: {
+    devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+      buildInputs = [
+        parquet-tools.packages.x86_64-linux.default
+      ];
+    };
+  };
+}
+```
+
+### Help output
 
 ```
 parquet-tools -h                      
